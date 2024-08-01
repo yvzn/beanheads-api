@@ -1,3 +1,3 @@
 # beanheads-api
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/yvzn/beanheads-api)
+Wrapper API around [Beanheads avatars](https://beanheads.robertbroersma.com/)
