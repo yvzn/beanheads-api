@@ -1,32 +1,57 @@
 const express = require('express');
-const React = require('react')
-const RDS = require('react-dom/server')
+const React = require('react');
+const RDS = require('react-dom/server');
+const beanheads = require('beanheads');
 
 const app = express();
 const port = 3000;
 
+const parameters = [
+	"accessory",
+    "body",
+    "circleColor",
+    "clothing",
+    "clothingColor",
+    "eyebrows",
+    "eyes",
+    "facialHair",
+    "graphic",
+    "hair",
+    "hairColor",
+    "hat",
+    "hatColor",
+    "lashes",
+    "lipColor",
+    "mask",
+    "faceMask",
+    "mouth",
+    "skinTone",
+]
+
 app.get('/', (req, res) => {
-  res.set('Content-Type', 'image/svg+xml');
+	res.set('Content-Type', 'image/svg+xml');
 
-  const avatar = React.createElement(
-    'svg',
-    {       
-      xmlns:"http://www.w3.org/2000/svg" ,
-      viewBox:"0 0 24 24"
-    },
-    React.createElement(
-      'path',
-      {
-        d: 'M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z'
-      }
-    )
-  );
+	const avatarProps = {};
+	for (const parameter of parameters) {
+		if (isValid(parameter, req.query[parameter])) {
+			avatarProps[parameter] = req.query[parameter];
+		}
+	}
 
-  const body = RDS.renderToString(avatar);
+	const avatar = React.createElement(
+		beanheads.BeanHead,
+		avatarProps
+	);
 
-  res.send(body);
+	const body = RDS.renderToString(avatar);
+
+	res.send(body);
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+	console.log(`Example app listening on port ${port}`);
 });
+
+function isValid(parameterName, parameterValue) {
+	return Boolean(parameterValue);
+}
