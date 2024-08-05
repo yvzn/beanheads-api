@@ -4,7 +4,7 @@ const RDS = require('react-dom/server');
 const beanheads = require('beanheads');
 
 const app = express();
-const port = 3000;
+const port = parseInt(process.env.PORT) || 3000;
 
 const parameters = {
 	"skinTone": Object.keys(beanheads.theme.colors.skin),
