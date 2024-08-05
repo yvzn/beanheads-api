@@ -3,7 +3,11 @@
   "description": "Wrapper API for Beanheads avatars",
   "main": "index.cjs",
   "scripts": {
-    "dev": "nodemon ./index.cjs"
+    "dev": "nodemon index.cjs",
+    "start": "node index.cjs"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "beanheads": "^0.3.3",
