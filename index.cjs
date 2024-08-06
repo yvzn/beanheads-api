@@ -3,8 +3,22 @@ const React = require('react');
 const RDS = require('react-dom/server');
 const beanheads = require('beanheads');
 
+const compression = require("compression");
+const helmet = require("helmet");
+
 const app = express();
 const port = parseInt(process.env.PORT) || 3000;
+
+
+// -- middleware
+
+
+app.use(compression());
+app.use(helmet());
+
+
+// -- routes
+
 
 const parameters = {
 	"skinTone": Object.keys(beanheads.theme.colors.skin),
@@ -29,7 +43,7 @@ const parameters = {
 	"lashes": ["true", "false"],
 }
 
-app.get('/', (req, res) => {
+app.get('/avatar', (req, res) => {
 	res.set('Content-Type', 'image/svg+xml');
 
 	const avatarProps = {};
@@ -49,12 +63,22 @@ app.get('/', (req, res) => {
 	res.send(body);
 });
 
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
-});
+
+// -- utilities
+
 
 function isValid(parameterName, parameterValue) {
 	return parameterValue 
 		&& parameterName in parameters
 		&& parameters[parameterName].includes(parameterValue);
 }
+
+
+// -- run
+
+
+app.listen(port, () => {
+	console.log(`Example app listening on port ${port}`);
+});
+
+
