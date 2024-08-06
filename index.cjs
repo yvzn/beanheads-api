@@ -1,10 +1,16 @@
 const express = require('express');
+const path = require('node:path'); 
+
 const React = require('react');
 const RDS = require('react-dom/server');
 const beanheads = require('beanheads');
 
 const compression = require("compression");
 const helmet = require("helmet");
+
+
+// -- app
+
 
 const app = express();
 const port = parseInt(process.env.PORT) || 3000;
@@ -15,6 +21,9 @@ const port = parseInt(process.env.PORT) || 3000;
 
 app.use(compression());
 app.use(helmet());
+
+app.use(express.static(path.join(__dirname, "public")));
+app.set('view engine', 'ejs');
 
 
 // -- routes
@@ -61,6 +70,11 @@ app.get('/avatar', (req, res) => {
 	const body = RDS.renderToString(avatar);
 
 	res.send(body);
+});
+
+
+app.get('/', (req, res) => {
+	res.render('index', {...parameters});
 });
 
 

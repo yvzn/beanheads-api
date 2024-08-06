@@ -52,3 +52,7 @@ This project is [MIT License](https://choosealicense.com/licenses/mit/), Copyrig
 This project uses open-source, third party software:
 
 - [ExpressJS](https://github.com/expressjs/express): MIT License, Copyright (c) 2009-2014 TJ Holowaychuk,Copyright (c) 2013-2014 Roman Shtylman, Copyright (c) 2014-2015 Douglas Christopher Wilson 
+
+This project uses fonts SIL licence:
+
+- [Jost](https://github.com/indestructible-type/Jost/): SIL Open Font License, Copyright 2020 The Jost Project Authors (https://github.com/indestructible-type/Jost)
