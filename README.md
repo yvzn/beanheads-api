@@ -6,7 +6,7 @@ This webapp is a wrapper around Beanheads, that makes it available outside React
 
 ## How to use ?
 
-To create a random avatar in SVG, call:
+To create a random avatar in SVG, call this URL:
 
 https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar
 
@@ -20,11 +20,9 @@ To include a random avatar in HTML, add the following code:
 
 The webapp accepts most of Beanheds properties as parameters, to allow customization:
 
-Example:
+Example: https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?skinTone=yellow&hair=long
 
-https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?skinTone=yellow&hair=long
-
-Refer to the [full reference of properties](https://github.com/RobertBroersma/beanheads?tab=readme-ov-file#props)
+See to the [full reference of properties](https://github.com/RobertBroersma/beanheads?tab=readme-ov-file#props).
 
 ## How to run locally ?
 
@@ -53,6 +51,8 @@ This project uses open-source, third party software:
 
 - [ExpressJS](https://github.com/expressjs/express): MIT License, Copyright (c) 2009-2014 TJ Holowaychuk,Copyright (c) 2013-2014 Roman Shtylman, Copyright (c) 2014-2015 Douglas Christopher Wilson 
 
-This project uses fonts SIL licence:
+This project uses fonts under SIL licence:
 
 - [Jost](https://github.com/indestructible-type/Jost/): SIL Open Font License, Copyright 2020 The Jost Project Authors (https://github.com/indestructible-type/Jost)
+
+[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/yvzn/beanheads-api)

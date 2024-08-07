@@ -2,14 +2,28 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="/index.css" />
-    <title>Bean Heads generator</title>
+    <link rel="preload" as="font" href="/Jost-VF.ttf" />
+    <meta name="description" content="Embed customizable SVG avatars to your website or app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bean Heads API</title>
 </head>
 <body>
 <main>
-<form action="/avatar" target="preview" aria-labelledby="maintitle">
-    <h1 id="maintitle">Bean Heads generator</h1>
-</form>
-<iframe name="preview" src="/avatar"></iframe>
+<section>
+    <h1 id="maintitle">Integrate custom avatars with your project</h1>
+    <p>Add <a href="https://beanheads.robertbroersma.com/">BeanHeads</a> &mdash; customizable SVG characters &mdash; into your webapp or API</p>
+    <p><label>html: <input value="&lt;img src=&quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar&quot; alt=&quot;avatar&quot; /&gt;" spellcheck="false" readonly ></label></p>
+    <p>or</p>
+    <p><label>api: <input value="curl &quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar&quot;"  spellcheck="false" readonly /></label></p>
+</section>
+<section>
+    <img src="/avatar" alt="Randomly generated avatar characters" width="400"/>
+</section>
 </main>
+<script>
+for(const i of document.querySelectorAll('input')) {
+    i.addEventListener('click', function(e) { e.currentTarget.select() })
+}
+</script>
 </body>
 </html>
