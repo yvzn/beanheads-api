@@ -1,3 +1,15 @@
-for(const i of document.querySelectorAll('input')) {
-    i.addEventListener('click', function(e) { e.currentTarget.select() })
+document.querySelectorAll('input').forEach(
+    (input) => input.addEventListener('click', function(e) { e.currentTarget.select() })
+)
+
+if ('clipboard' in navigator) {
+    document.querySelectorAll('input').forEach(
+        (input) => input.classList.add('copiable')
+    )
+
+    document.querySelectorAll('button').forEach(
+        (button) => {
+            /* button.hidden = false */
+        }
+    )
 }
