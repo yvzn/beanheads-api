@@ -74,7 +74,7 @@ app.get('/avatar', (req, res) => {
 
 
 app.get('/', (req, res) => {
-	res.render('index', {...parameters});
+	res.render('homepage', {...parameters});
 });
 
 

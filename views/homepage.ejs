@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/homepage.css" />
+    <link rel="preload" as="font" href="/Jost-VF.ttf" />
+    <meta name="description" content="Embed customizable SVG avatars to your website or app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bean Heads API</title>
+</head>
+<body>
+<main>
+<section>
+    <h1 id="maintitle">Integrate avatars with your project</h1>
+    <p>Add <a href="https://beanheads.robertbroersma.com/">BeanHeads</a> &mdash; customizable SVG characters &mdash; into your webapp or API</p>
+    <p>
+        <label>html: <input 
+            value="&lt;img src=&quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?..customizations..&quot; alt=&quot;avatar&quot; /&gt;" 
+            spellcheck="false" readonly ></label><button type="button" hidden title="Copy HTML to clipboard">📋</button>
+    </p>
+    <p>
+        <label>api: <input
+            value="curl &quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?..customizations..&quot;"
+            spellcheck="false" readonly /></label><button type="button" hidden title="Copy API call to clipboard">📋</button>
+    </p>
+</section>
+<section>
+    <img src="/avatar" alt="Randomly generated avatar character" width="400"/>
+</section>
+<article>
+    <h2>How to customize ?</h2>
+    <p>The API accepts most of Beanheds properties as parameters, to allow customization:</p>
+    <p>Example: <a href="https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?skinTone=yellow&hair=long">
+        https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?skinTone=yellow&hair=long</a></p>
+    <p>See to the <a href="https://github.com/RobertBroersma/beanheads?tab=readme-ov-file#props">full reference of properties</a>
+        on Github.</p>
+
+    <h2>How does it work ?</h2>
+    <p><a href="https://beanheads.robertbroersma.com/">BeanHeads</a> is a cool React component by RobertBroersma
+        that generates customizable SVG avatars.</p>
+    <p>This website is a wrapper around Beanheads, that makes it available outside React world.</p>
+    
+    <p><a href="https://github.com/yvzn/beanheads-api">Source code available on Github</a></p>
+</article>
+</main>
+<script src="/clipboard.js" defer></script>
+</body>
+</html>

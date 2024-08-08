@@ -25,24 +25,23 @@ body {
 }
 
 main {
-    height: 100%;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 0;
     display: grid;
-    grid-template-rows: .5fr auto auto 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-        "."
         "avatar"
         "text"
-        ".";
+        "copy";
+    gap: 20px;
 }
 
 section:first-child {
     grid-area: text
 }
 
-section:last-child {
+section {
     grid-area: avatar;
 }
 
@@ -62,6 +61,11 @@ p {
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: 10px;
+    max-width: 60ch;
+}
+
+p:first-of-type {
+    margin-bottom: 20px;
 }
 
 img {
@@ -73,12 +77,37 @@ input {
     font-size: 1rem;
     color: #4a5568;
     padding: 5px;
-    border: solid 1px #4a5568;
+    border: solid 1px #DBDFE6;
     border-radius: 5px;
-    width: 20ch;
+    width: 60vw;
     max-width: 80vw;
 }
 
+input:focus-visible {
+    border-color: white;
+}
+
+article {
+    grid-area: copy;
+    padding: 80px 0 80px 0;
+    margin: auto
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #1a202c;
+    text-wrap: balance;
+}
+
+article p {
+    font-size: 1rem;
+}
+
+article p:first-of-type {
+    margin-bottom: 10px;
+}
 
 @media (width > 700px) {
     body {
@@ -86,14 +115,25 @@ input {
     }
     
     main {
-            grid-template-rows: 1fr;
-            grid-template-columns: auto auto;
-            grid-template-areas:
-                    "text avatar";
-            gap: 0;
+        grid-template-rows: 85vh 1fr;
+        grid-template-columns: auto auto;
+        grid-template-areas:
+            "text avatar"
+            "copy copy";
+        gap: 0;
     }
 
     input {
-        width: 40ch;
+        width: 20ch;
+    }
+
+    article {
+        padding: 0 40px 80px 0;
+    }
+}
+
+@media (width > 800px) {
+    input {
+        width: 40vw;
     }
 }
