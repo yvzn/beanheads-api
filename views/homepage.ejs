@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="/homepage.css" />
     <link rel="preload" as="font" href="/Jost-VF.ttf" />
-    <meta name="description" content="Embed customizable SVG avatars to your website or app" />
+    <meta name="description" content="Embed customizable SVG characters to your website or app" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bean Heads API</title>
+    <meta charset="utf-8" />
+    <base target="_blank" />
+    <title>Bean Heads API : Customizable SVG avatars</title>
 </head>
 <body>
 <main>
 <section>
-    <h1 id="maintitle">Integrate avatars with your project</h1>
-    <p class="tagline">Add <a href="https://beanheads.robertbroersma.com/">BeanHeads</a> &mdash; customizable SVG characters &mdash; into your webapp or API</p>
+    <h1 id="maintitle">Customizable avatars for your project</h1>
+    <p class="tagline">Add <a href="https://beanheads.robertbroersma.com/">BeanHeads</a> 
+        &mdash; configurable characters in SVG &mdash; in your webapp or API.</p>
     <p class="code">
-        <label>html: <input 
-            value="&lt;img src=&quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?..customizations..&quot; alt=&quot;avatar&quot; /&gt;" 
-            spellcheck="false" readonly ></label><button type="button" hidden title="Copy HTML to clipboard">📋</button>
+        <label>html: <input id="html"
+            value="&lt;img src=&quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?random&quot; alt=&quot;avatar&quot; /&gt;" 
+            spellcheck="false" readonly ></label><button type="button" hidden data-for="html" title="Copy HTML to clipboard">📋</button>
     </p>
     <p class="code">
-        <label>api: <input
-            value="curl &quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?..customizations..&quot;"
-            spellcheck="false" readonly /></label><button type="button" hidden title="Copy API call to clipboard">📋</button>
+        <label>api: <input id="api"
+            value="curl &quot;https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?random&quot;"
+            spellcheck="false" readonly /></label><button type="button" hidden data-for="api" title="Copy API call to clipboard">📋</button>
     </p>
 </section>
 <section>
@@ -28,18 +31,20 @@
 </section>
 <article>
     <h2>How to customize ?</h2>
-    <p>The API accepts most of Beanheds properties as parameters, to allow customization:</p>
-    <p>Example: <a href="https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?skinTone=yellow&hair=long">
-        https://beanheads-api-duqkg6rn6q-od.a.run.app/avatar?skinTone=yellow&hair=long</a></p>
-    <p>See to the <a href="https://github.com/RobertBroersma/beanheads?tab=readme-ov-file#props">full reference of properties</a>
+    <p>The default <a href="/avatar">/avatar</a> URL generates a new, randomly generated character every time.</p>
+    <p>To customize the generated character, add extra parameters to the URL:</p>
+    <p>Example: <a href="/avatar?skinTone=yellow&hair=long">/avatar?skinTone=yellow&hair=long</a></p>
+    <p>The URL accepts most of Beanheds properties as parameters. See to the <a
+        href="https://github.com/RobertBroersma/beanheads?tab=readme-ov-file#props">full list of Beanheads properties</a>
         on Github.</p>
 
     <h2>How does it work ?</h2>
-    <p><a href="https://beanheads.robertbroersma.com/">BeanHeads</a> is a cool React component by RobertBroersma
-        that generates customizable SVG avatars.</p>
-    <p>This website is a wrapper around Beanheads, that makes it available outside React world.</p>
+    <p><a href="https://beanheads.robertbroersma.com/">BeanHeads</a> is a cool React component by RobertBroersma,
+        that generates customizable avatars using SVG, React &amp; Javascript.</p>
+    <p>This website is a wrapper around Beanheads, that makes the component content available without
+        React or Javascript.</p>
     
-    <p><a href="https://github.com/yvzn/beanheads-api">Source code available on Github</a></p>
+    <p>The <a href="https://github.com/yvzn/beanheads-api">source code is available on Github</a>.</p>
 </article>
 </main>
 <script src="/clipboard.js" defer></script>

@@ -21,6 +21,11 @@ const port = parseInt(process.env.PORT) || 3000;
 
 app.use(compression());
 app.use(helmet());
+app.use(function(req, res, next) {
+	res.charset = "utf-8";
+	res.setHeader('X-Content-Type-Options', 'nosniff');
+	next();
+});
 
 app.use(express.static(path.join(__dirname, "public")));
 app.set('view engine', 'ejs');
