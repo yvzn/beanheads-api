@@ -23,7 +23,6 @@ app.use(compression());
 app.use(helmet());
 app.use(function(req, res, next) {
 	res.charset = "utf-8";
-	res.setHeader('X-Content-Type-Options', 'nosniff');
 	next();
 });
 

@@ -15,6 +15,7 @@ if ('clipboard' in navigator) {
             const input = document.getElementById(button.dataset['for'])
             button.addEventListener('click', function (event) {                
                 navigator.clipboard.writeText(input.value)
+                input.select()
                 button.innerText = '✔\uFE0F'
                 setTimeout(function() { button.innerText = '📋' }, 1000)
             })
